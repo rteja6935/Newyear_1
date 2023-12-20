@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         #new_web{
+        margin:0px;
+        text-align: center;
+        padding-top: 200px;
+        
+    }
+   
+    .background-india{
+            background-image: url('india_p.jpg');
+            background-size: cover;
+            background-repeat: no-repeat; 
+            background-attachment: fixed;
+        }
+        .background-china{
+            background-image: url('wall.png');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        .background-unitedstates{
+            background-image: url('UN_P.webp');
+            background-size: cover;
+        }
+        .background-japan{
+            background-image: url('japan_P.jpg');
+            background-size: cover;
+            background-repeat: no-repeat; 
+        }
+        .background-italy{
+            background-image: url('Italy_p.png');
+           
+            background-size: cover;
+        }
+        .background-brazil{
+            background-image: url('brazil_p.jpg');
+            /* background-color: blueviolet; */
+            background-size: cover;
+        }
+        .background-australia{
+            background-image: url('australia_p.jpg');
+            /* background-color: blueviolet; */
+            background-size: cover;
+        }
+        #timer {
+  /* border: 1px solid #ddd; */
+  border-radius: 5px;
+  /* background-color: #eee; */
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+#days, #hours, #minutes, #seconds {
+  /* display: inline-block; */
+  padding: 0px;
+  color:white;
+  padding-left: 10px;
+  width: 50px;
+  height: 70px;
+  margin-top: 0px;
+  border-radius: 5px;
+  display: block;
+  text-align: center;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  /* display: inline-block; */
+}
+/* #days {
+  display: block; /* This will make "days" start on a new line 
+} */
+
+#days .value, #hours .value, #minutes .value, #seconds .value {
+  font-size: 90px;
+  font-weight: bold;
+  background-color: rgb(227, 18, 18);
+  color: blue;
+
+  /* height: 10px;
+  width: 10px; */
+ 
+  
+}
+h3{
+    margin-top: 0%;
+    display: inline;
+    color: white;
+    
+}
+#days .label, #hours .label, #minutes .label, #seconds .label {
+  font-size: 12px;
+  text-transform: uppercase;
+}
+#y{
+    /* display: flex;
+   align-items: center; */
+   background-color: black;
+   height: 100px;
+   width: 70px;
+}
+
+
+/* .background{
+    width: 30px;
+    height: 30px; */
+    /* background-color: red; */
+   /* // border-radius: 2px;
+} */
+    </style>
+  
+</head>
+<body>
+   
+    <section id="new_web">
+        <div  class="background">
+            <div class="countdown">
+                <h1 style="font-size: 50px ;" id="countrys"> India</h1>
+                <h1 style="background-color: lightblue;width: 400px;padding: 5px;margin-left: 550px;">Countdown to New Year</h1>
+        <div id="timer">
+            <div id="y" >
+                <span id="days"></span>
+                <h3> days</h3>
+            </div>
+            <div id="y" >
+                <span id="hours"></span> 
+                <h3> hours</h3>
+            </div>
+            <div id="y" >
+                <span id="minutes"></span> 
+                <h3> minutes</h3>
+            </div>
+            <div id="y" >
+                <span id="seconds"></span>
+                <h3> seconds</h3>
+            </div>
+         </div>    
+            </div>
+        </div>
+     </section> 
+     
+     <script>
+         const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has('content')) {
+            // Get the content from the URL parameter and update the h2 element
+            var content = decodeURIComponent(urlParams.get('content'));
+            document.getElementById('countrys').innerText = content;
+        }
+        //  function updateH1(data) {
+        //     document.getElementById('countrys').innerText = data;
+        // }
+        let countDownDate;
+        let b=document.getElementById('countrys');
+        let y=b.innerText;
+        console.log("y",y);
+// function updateCountdown(y) {
+    // Logic that depends on y
+    let i;
+    if (y == "India") {
+        countDownDate = new Date("Jan 1, 2024 00:00:00").getTime();
+        console.log("India", countDownDate);
+    } else if (y == "Japan") {
+        countDownDate = new Date("Jan 1, 2024 00:00:00 GMT+0900").getTime();
+        console.log("Japan", countDownDate);
+    } else if (y == "United States") {
+        countDownDate = new Date("Jan 1, 2024 00:00:00 GMT-0500").getTime();
+        console.log("UN", countDownDate);
+    }
+   else if (y == "China") {
+       
+    countDownDate = new Date("Jan 1, 2024 00:00:00 GMT+0800").getTime();
+    //  i = 'url(' + count1/china_wall.webp + ')';
+    }
+    else if (y == "Italy") {
+      countDownDate = new Date("Jan 1, 2024 00:00:00 GMT+0100").getTime();
+      }
+      else if (y == "Brazil") {
+        countDownDate = new Date("Jan 1, 2024 00:00:00 GMT-0300").getTime();
+        }
+        else if (y == "Australia") {
+          countDownDate = new Date("Jan 1, 2024 00:00:00 GMT+1000").getTime();
+     }
+    //  document.body.style.backgroundImage=i;
+    if (y == "India") {
+        document.body.classList.add('background-india');
+    }
+    else if (y == "Japan") {
+        document.body.classList.add('background-japan');
+    }
+    else if (y == "China") {
+        document.body.classList.add('background-china');
+    } 
+    else if (y == "United States") {
+        document.body.classList.add('background-unitedstates');
+    }  
+    else if (y == "Italy") {
+        document.body.classList.add('background-italy');
+      }
+      else if (y == "Brazil") {
+        document.body.classList.add('background-brazil');
+        }
+        else if (y == "Australia") {
+            document.body.classList.add('background-australia');
+     }
+    //  set_time(y,countDownDate);
+   
+        const x = setInterval(function() {
+  const now = new Date().getTime();
+  const distance = countDownDate - now;
+  console.log(now);
+  // Calculate the days, hours, minutes, and seconds remaining
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the HTML elements
+  document.getElementById("days").innerText = days;
+  document.getElementById("hours").innerText = hours;
+  document.getElementById("minutes").innerText = minutes;
+  document.getElementById("seconds").innerText = seconds;
+//    day.innerText = days;
+//    hour.innerText = hours;
+//    min.innerText = minutes;
+//    sec.innerText = seconds;
+
+  // If the countdown is over, display a message
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("timer").innerHTML = "Happy New Year!";
+  }
+}, 1000);
+// if (y == "China") {
+//          i=url(/count1/wall.png);
+//      }
+     </script>
+    <!-- <script src="filedemo.js"></script> -->
+</body>
+</html>

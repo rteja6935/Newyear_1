@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Countdown for all countries</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+
+    select {
+      width: 150px;
+      padding: 5px;
+      border: 1px solid #ccc;
+    }
+
+    #countdown {
+      font-size: 24px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="con">Countdown for all countries</h1>
+
+  <select id="country">
+    <option value="">-- Select Country --</option>
+    <option value="India">India</option>
+    <option value="United States">United States</option>
+    <option value="China">China</option>
+    <option value="Japan">Japan</option>
+    <option value="Brazil">Brazil</option>
+    <option value="Italy">Italy</option>
+    <option value="Australia">Australia</option>
+  </select>
+  <button id="okbutton" >Ok</button>
+
+  <div id="countdown"></div>
+  <a href="#" class="link1"></a>
+  <script>
+         document.getElementById('okbutton').addEventListener('click', function() {
+            // Get the content of the h2 element
+            var content = document.getElementById('country').value;
+
+            // Open the second HTML page in a new tab with a parameter indicating the content to pass
+            window.open('side-1.html?content=' + encodeURIComponent(content), '_self');
+        });
+    // let v=country.value;
+  
+    // function navigate(){
+    //   let v = document.getElementById('country').value;
+    //   if (window.opener) {
+    //             window.opener.updateH1(v);
+    //         }
+    // }
+  </script>
+  
+</body>
+</html>
